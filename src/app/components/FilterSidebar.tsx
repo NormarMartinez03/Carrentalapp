@@ -15,21 +15,21 @@ export function FilterSidebar({
 }: FilterSidebarProps) {
   return (
     <div className="bg-card rounded-xl border border-border p-6">
-      <h3 className="mb-4">Filters</h3>
+      <h3 className="mb-4">Filtros</h3>
 
       <div className="mb-6">
-        <h4 className="mb-3">Category</h4>
+        <h4 className="mb-3">Categoría</h4>
         <div className="space-y-2">
           <label className="flex items-center gap-2 cursor-pointer">
             <input
               type="radio"
               name="category"
-              value="All"
-              checked={selectedCategory === 'All'}
+              value="Todas"
+              checked={selectedCategory === 'Todas'}
               onChange={(e) => onCategoryChange(e.target.value)}
               className="w-4 h-4"
             />
-            <span>All Cars</span>
+            <span>Todos los carros</span>
           </label>
           {categories.map((category) => (
             <label key={category} className="flex items-center gap-2 cursor-pointer">
@@ -48,19 +48,19 @@ export function FilterSidebar({
       </div>
 
       <div>
-        <h4 className="mb-3">Price Range</h4>
+        <h4 className="mb-3">Precio máximo (USD por día)</h4>
         <div className="space-y-3">
           <input
             type="range"
-            min="0"
-            max="500"
+            min="30"
+            max="250"
             value={priceRange[1]}
-            onChange={(e) => onPriceChange([0, parseInt(e.target.value)])}
+            onChange={(e) => onPriceChange([30, parseInt(e.target.value)])}
             className="w-full"
           />
           <div className="flex justify-between text-sm text-muted-foreground">
-            <span>${priceRange[0]}</span>
-            <span>${priceRange[1]}</span>
+            <span>US${priceRange[0]}</span>
+            <span>US${priceRange[1]}</span>
           </div>
         </div>
       </div>
