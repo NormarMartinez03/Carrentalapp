@@ -1,5 +1,6 @@
 import { Car } from '../types';
-import { Users, Briefcase, Cog } from 'lucide-react';
+import { Users, Briefcase, Cog, MapPin } from 'lucide-react';
+import { formatDOP, formatUSD } from '../utils/currency';
 
 interface CarCardProps {
   car: Car;
@@ -20,7 +21,7 @@ export function CarCard({ car, onSelect }: CarCardProps) {
         />
         {car.featured && (
           <div className="absolute top-3 right-3 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm">
-            Featured
+            Destacado
           </div>
         )}
       </div>
@@ -29,6 +30,7 @@ export function CarCard({ car, onSelect }: CarCardProps) {
         <div className="mb-2">
           <h3>{car.name}</h3>
           <p className="text-muted-foreground text-sm">{car.category}</p>
+          <p className="text-muted-foreground text-xs flex items-center gap-1 mt-1"><MapPin className="w-3 h-3" />{car.location}</p>
         </div>
 
         <div className="flex items-center gap-4 mb-4 text-sm text-muted-foreground">
@@ -48,11 +50,11 @@ export function CarCard({ car, onSelect }: CarCardProps) {
 
         <div className="flex items-center justify-between pt-3 border-t border-border">
           <div>
-            <span className="text-2xl">${car.price}</span>
-            <span className="text-muted-foreground text-sm">/day</span>
+            <div className="text-lg">{formatUSD(car.priceUSD)} /día</div>
+            <div className="text-sm text-muted-foreground">{formatDOP(car.priceDOP)} /día</div>
           </div>
           <button className="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">
-            Book Now
+            Reservar
           </button>
         </div>
       </div>

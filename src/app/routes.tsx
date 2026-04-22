@@ -12,6 +12,11 @@ import { Unauthorized } from './pages/Unauthorized';
 import { Browse } from './pages/customer/Browse';
 import { MyBookings } from './pages/customer/MyBookings';
 import { Profile } from './pages/customer/Profile';
+import { Reports } from './pages/admin/Reports';
+import { Revenue } from './pages/admin/Revenue';
+import { Locations } from './pages/admin/Locations';
+import { Settings } from './pages/admin/Settings';
+import { Contracts } from './pages/agent/Contracts';
 
 export const router = createBrowserRouter([
   {
@@ -78,10 +83,7 @@ export const router = createBrowserRouter([
         path: 'reports',
         element: (
           <ProtectedRoute allowedRoles={['admin']}>
-            <div className="text-center py-12">
-              <h2>Módulo de Reportes</h2>
-              <p className="text-muted-foreground mt-2">En desarrollo</p>
-            </div>
+            <Reports />
           </ProtectedRoute>
         ),
       },
@@ -89,10 +91,7 @@ export const router = createBrowserRouter([
         path: 'revenue',
         element: (
           <ProtectedRoute allowedRoles={['admin']}>
-            <div className="text-center py-12">
-              <h2>Módulo de Ingresos</h2>
-              <p className="text-muted-foreground mt-2">En desarrollo</p>
-            </div>
+            <Revenue />
           </ProtectedRoute>
         ),
       },
@@ -100,10 +99,7 @@ export const router = createBrowserRouter([
         path: 'locations',
         element: (
           <ProtectedRoute allowedRoles={['admin']}>
-            <div className="text-center py-12">
-              <h2>Módulo de Ubicaciones</h2>
-              <p className="text-muted-foreground mt-2">En desarrollo</p>
-            </div>
+            <Locations />
           </ProtectedRoute>
         ),
       },
@@ -111,10 +107,7 @@ export const router = createBrowserRouter([
         path: 'settings',
         element: (
           <ProtectedRoute allowedRoles={['admin']}>
-            <div className="text-center py-12">
-              <h2>Configuración</h2>
-              <p className="text-muted-foreground mt-2">En desarrollo</p>
-            </div>
+            <Settings />
           </ProtectedRoute>
         ),
       },
@@ -122,10 +115,7 @@ export const router = createBrowserRouter([
         path: 'contracts',
         element: (
           <ProtectedRoute allowedRoles={['agent']}>
-            <div className="text-center py-12">
-              <h2>Contratos</h2>
-              <p className="text-muted-foreground mt-2">En desarrollo</p>
-            </div>
+            <Contracts />
           </ProtectedRoute>
         ),
       },

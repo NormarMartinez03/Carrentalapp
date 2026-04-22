@@ -49,7 +49,7 @@ export function Profile() {
                     <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
                     <input
                       type="tel"
-                      placeholder="+34 612 345 678"
+                      placeholder="+1 809 555 1200"
                       className="w-full pl-10 pr-4 py-3 bg-input-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring"
                     />
                   </div>
@@ -61,7 +61,7 @@ export function Profile() {
                     <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
                     <input
                       type="text"
-                      placeholder="Calle Principal, 123, Madrid"
+                      placeholder="Av. Abraham Lincoln, Santo Domingo"
                       className="w-full pl-10 pr-4 py-3 bg-input-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring"
                     />
                   </div>
